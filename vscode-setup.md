@@ -31,3 +31,5 @@ I use the `One Monokai` in all the course videos. This is a free theme, similar 
 `Word Wrap` set to `on`, to avoid vertical scrollbars for long content
 
 `Tab Size` set to `2`, for better code readability
+
+`Trying something`
