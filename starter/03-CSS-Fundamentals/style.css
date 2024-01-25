@@ -1,13 +1,58 @@
 * {
   /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
 }
 
+/* PAGE SECTIONS */
 body {
   color: #444;
   font-family: sans-serif;
 
   border-top: 10px solid #1098ad;
+  position: relative;
 }
+
+.container {
+  width: 800px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto; /* Centers the container */
+  /* position: relative; */
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  height: 80px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+nav {
+  font-size: 18px;
+  text-align: center;
+}
+
+.post-header {
+  margin-bottom: 40px;
+  /* position: relative; */
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  padding: 50px 0;
+  width: 500px;
+}
+
+/* SMALLER SECTIONS */
 
 h1,
 h2,
@@ -27,6 +72,8 @@ h2 {
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 h4 {
@@ -38,10 +85,22 @@ h4 {
 p {
   font-size: 22px;
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
 }
 
 /* footer p {
@@ -70,16 +129,6 @@ li {
   list-style: none;
 }
 
-.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
-}
-
 /* .first-li {
   font-weight: bold;
 } */
@@ -93,9 +142,9 @@ li:last-child {
   font-style: italic;
 }
 
-li:nth-child(even) {
+/* li:nth-child(even) {
   color: red;
-}
+} */
 
 /* styling links */
 a:link {
@@ -120,6 +169,71 @@ a:active {
   font-style: italic;
 }
 /* LVHA - Link - Visited - Hover - Active */
+
+.post-img {
+  width: 100%; /* Percentage base comes from it's parent element */
+  height: auto;
+  /* img is an inline block element */
+}
+
+nav a:link {
+  /* background-color: orange;
+  margin: 20px;
+  padding: 20px;
+
+  display: block; */
+
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  position: absolute;
+  /* bottom: 50px;
+  left: 50px; */
+
+  bottom: 50px;
+  right: 50px;
+}
+
+/* Psuedo Elements are written with two colons :: */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* Adjacent sibling selector */
+h3 + p::first-line {
+  /* color: red; */
+}
+
+h2 {
+  /* background-color: orange; */
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
 
 /* Stopped at CSS Theory 1 */
 /* Thank you for this note! Do it again if you decide to pause the course again */
@@ -158,8 +272,66 @@ nav p {
   font-size: 18px;
 } */
 
-nav {
-  font-size: 18px;
-}
 /* Start Challenge #1 in CSS Fundamentals */
 /* If paused for long, review the difference between the body element and the universal selector - lesson in inherticance and different use cases you might be confused with */
+
+/* Stopped at "Centering our Page" */
+
+/* Block-Level Elements vs Inline Elements */
+
+/* 
+      BLOCK_LEVEL ELEMENTS
+
+- Elements are formatted visually as blocks
+- Elements occupy 100% of parent element's width, no matter the content
+- Elements are stacked vertically by default, one after another
+- The box-model applies as showed earlier
+
+*Default elements*: body, main, header, footer, section, nav, aside, div, h1-h6, p, ul, ol, li, etc.
+
+*With CSS*: display: block
+
+      INLINE ELEMENTS
+- Occupies only the space necessary for its content
+- Cause no line-breaks after or before the element
+- Box model applies in a different way: heights and widths do not apply
+- Paddings and margins are applied only horizontally (left and right)
+
+*Default elements*: a, img, strong, em, button, etc.
+
+With CSS: display: inline
+
+    INLINE-BLOCK BOXES
+- Looks like inline from the outside, behaves like block-level on the inside
+- Occupies only content's space
+- Cause no line-breaks
+- Box-model applies as showed
+
+With CSS: display: inline-block
+
+*/
+
+/* 
+
+    NORMAL FLOW VS. ABSOLUTE POSITIONING
+
+NORMAL FLOW
+- Default positioning
+- Element is "in flow"
+- Elements are simply laid out according to their order in the HTML code
+
+Default positioning
+position: relative
+
+ABSOLUTE POSITIONING
+- Element is removed from the normal flow: "out of flow"
+- No impact on surroundingg elements, might overlap them
+- We use top, bottom, left or right to offset the element from its relatively positioned container
+
+position: absolute
+
+** Bro I've been reading so much about position: relative and absolute for so many times and the only time I've ever truly understood it was when Jonas was explaining it. Are you kidding me? I'm more of a visual learner **
+
+*/
+
+/* Stopped at Developer Skill #1: Googling and Reading Documentation */
