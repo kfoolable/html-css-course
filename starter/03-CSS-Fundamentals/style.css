@@ -2,6 +2,7 @@
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* PAGE SECTIONS */
@@ -14,7 +15,7 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto; /* Centers the container */
@@ -25,7 +26,7 @@ body {
   background-color: #f7f7f7;
   padding: 20px 40px;
   margin-bottom: 60px;
-  height: 80px;
+  /* height: 80px; */
 }
 
 article {
@@ -34,7 +35,7 @@ article {
 
 nav {
   font-size: 18px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .post-header {
@@ -48,8 +49,7 @@ aside {
   border-bottom: 5px solid #1098ad;
   /* padding-top: 50px;
   padding-bottom: 50px; */
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
 }
 
 /* SMALLER SECTIONS */
@@ -68,6 +68,7 @@ h1 {
 
 h2 {
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 h3 {
@@ -80,6 +81,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -127,6 +129,7 @@ li:last-child {
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
 /* .first-li {
@@ -335,3 +338,70 @@ position: absolute
 */
 
 /* Stopped at Developer Skill #1: Googling and Reading Documentation */
+
+/* CSS Layouts will still be done here */
+
+/* FLOATS */
+/*
+
+** Floats are different from absolute positioning
+
+- Element is removed from the normal flow: "out of flow"
+- Text and inline elements will wrap around the floated element
+- The container will not adjust its height to the element *collapsing element or collapsed height
+
+float: left;
+float: right;
+
+*/
+.author-img {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+article {
+  width: 825px;
+  float: left;
+}
+
+aside {
+  width: 300px;
+  float: right;
+}
+
+footer {
+  clear: both;
+}
+
+/* THE BOX MODEL WITH BOX-SIZING: BORDER BOX */
+/*
+
+box-sizing: border-box;
+
+*/
+
+/* Stopped at Challenge #1: CSS Layouts */
