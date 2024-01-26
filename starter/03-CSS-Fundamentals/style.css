@@ -25,12 +25,12 @@ body {
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   /* height: 80px; */
 }
 
 article {
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 
 nav {
@@ -187,7 +187,6 @@ nav a:link {
   display: block; */
 
   margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
 }
 
@@ -354,6 +353,8 @@ float: left;
 float: right;
 
 */
+
+/*
 .author-img {
   float: left;
   margin-bottom: 20px;
@@ -407,3 +408,164 @@ box-sizing: border-box;
 /* Stopped at Challenge #1: CSS Layouts */
 
 /* Copied html files from CSS Layouts to work with Flexbox intro */
+
+/* FLEXBBOX */
+
+/*
+
+FLEX CONTAINER
+1. gap: 0 | <length>
+- To create space between items, without using margin
+
+2. justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly
+- To align items along main axis (horizontally, by default)
+
+3. align-items: stretch | flex-start | flex-end | center | baseline
+- To align items along cross axis (vertically, by default)
+
+4. flex-direction: row | row-reverse | column | column-reverse
+- To define which is the main axis
+
+5. flex-wrap: nowrap | wrap | wrap-reverse (😅 not discussed in this course bc it's too advanced for beginners)
+- To allow items to wrap into a new line if they are too large
+
+6. align-content: stretch | flex-start | flex-end | center | space-between | space-around (😅 not discussed in this course bc it's too advanced for beginners)
+- Only applies when there are multiple lines (flex-wrap: wrap)
+
+FLEX ITEMS
+1. align-self: auto | stretch | flex-start | flex-end | center | baseline
+- To overwrite align-items for individual flex items
+
+2. flex-grow: 0 | <integer>
+- To allow an element to grow (0 means no, 1+ means yes)
+
+3. flex-shrink: 1 | <integer>
+- To allow an element to shrink (0 means no, 1+ means yes
+
+4. flex-basis: auto | <length>
+- To define an item's width, instead of width property
+
+5. flex: 0 1 auto | <int> <int> <len>
+- Recommended shorthand for flex-grow, -shrink, -basis.
+
+6. order: 0 | integer
+- Controls order of items, -1 makes item first, 1 makes it last
+ 
+*/
+
+/* FLEXBOX */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* FLEXBOX LAYOUT */
+/* .row {
+  align-items: flex-start;
+  display: flex;
+  gap: 75px;
+  margin-bottom: 60px;
+}
+
+article {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+aside {
+  flex: 0 0 300px;
+} */
+
+/* CSS GRID LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header {
+  grid-column: 1 / -1;
+}
+
+article {
+}
+
+aside {
+}
+
+footer {
+  grid-column: 1 / -1;
+}
+
+/* CSS GRID FUNDAMENTALS */
+
+/*
+- CSS Grid is a set of CSS properties for building 2-dimensional layouts
+- The main idea behind CSS Grid is that we divide a container element into rows and column that can be filled with its child elements
+- In two-dimensional contexts, CSS Grid allows us to write less nested HTML and easier-to-read CSS
+- CSS Grid is not meant to replace flexbox! Instead, they work perfectly together. Need a 1D layout? Use flexbox. Need a 2D layout? Use CSS Grid.
+
+GRID CONTAINER
+1. grid-template-rows: <track size>
+   grid-template-columns: <track size>
+
+   - To establish the grid row and column tracks. One length unit for each track. Any unit can be used, new fr fills unused space
+
+2. row-gap: 0 | <length>      |  gap: 0 | <length>
+   column-gap: 0 | <length>   |
+   - To create empty space between tracks
+
+3. justify-items: stretch | start | center | end
+   align-items: stretch | start | center | end
+   - To align items inside rows / columns (horizontally / vertically)
+
+4. justify-content: start | start | center | end | ...
+   align-content: start | start | center | end |...
+   - To align entire grid inside grid container. Only applies if container is larger than the grid
+   * According to Jonas, this won't be discussed in this course to avoid confusion as it is an advanced topic for beginners
+
+GRID ITEMS
+1. grid-column: <start line> / <end line> | span <number>
+   grid-row: <start line> / <end line> | span <number>
+   - To place a grid item into a specific cell, based on line numbers, span keyword can be used to span an item across more cells
+
+2. justify-self: stretch | start | center | end
+   align-self: stretch | start | center | end
+   - To overwrite justify-items/align-items for single items
+*/
