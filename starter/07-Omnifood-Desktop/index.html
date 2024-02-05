@@ -546,9 +546,39 @@
               </p>
 
               <form class="cta-form" action="#">
-                <input type="text" />
-                <input type="email" />
-                <button class="btn">Sign up now</button>
+                <div>
+                  <label for="full-name">Full Name</label>
+                  <input
+                    id="full-name"
+                    type="text"
+                    placeholder="John Smith"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="email">Email address</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="me@example.com"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="select-where">Where did you hear from us?</label>
+                  <select name="" id="select-where" required>
+                    <option value="">Please choose one option:</option>
+                    <option value="friends">Friends and family</option>
+                    <option value="youtube">Youtube video</option>
+                    <option value="podcast">Podcast</option>
+                    <option value="ad">Facebook Ad</option>
+                    <option value="others">Others</option>
+                  </select>
+                </div>
+
+                <button class="btn btn--form">Sign up now</button>
               </form>
             </div>
             <div
@@ -560,5 +590,15 @@
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="container-grid grid--5-cols">
+        <div class="logo-col">Logo</div>
+        <div class="address-col">Address</div>
+        <div class="nav-col">Nav 1</div>
+        <div class="nav-col">Nav 2</div>
+        <div class="nav-col">Nav 3</div>
+      </div>
+    </footer>
   </body>
 </html>
