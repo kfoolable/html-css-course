@@ -1,7 +1,54 @@
 ///////////////////////////////////////////////////////////
+console.log("Hello World!");
+
+const myName = "Gillian Gavino";
+const h1 = document.querySelector(".heading-primary");
+
+// h1.addEventListener("click", function () {
+//   h1.textContent = myName;
+//   h1.style.backgroundColor = "red";
+//   h1.style.padding = "5rem";
+// });
+
+///////////////////////////////////////////////////////////
+// Set current year
+const yearEl = document.querySelector(".year");
+const currentYear = new Date().getFullYear();
+yearEl.textContent = currentYear;
+
+///////////////////////////////////////////////////////////
+// Make mobile navigation work
+const btnNav = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+
+btnNav.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
+
+///////////////////////////////////////////////////////////
+// Making nav sticky
+const sectionHeroEl = document.querySelector(".section-hero");
+const bodyEl = document.querySelector("body");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+
+    if (!ent.isIntersecting) bodyEl.classList.add("sticky");
+
+    if (ent.isIntersecting) bodyEl.classList.remove("sticky");
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+obs.observe(sectionHeroEl);
+
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
-  var flex = document.createElement("div");
+  const flex = document.createElement("div");
   flex.style.display = "flex";
   flex.style.flexDirection = "column";
   flex.style.rowGap = "1px";
@@ -10,7 +57,7 @@ function checkFlexGap() {
   flex.appendChild(document.createElement("div"));
 
   document.body.appendChild(flex);
-  var isSupported = flex.scrollHeight === 1;
+  const isSupported = flex.scrollHeight === 1;
   flex.parentNode.removeChild(flex);
   console.log(isSupported);
 

@@ -128,8 +128,10 @@ wtf is em? em is the root font size and rem is the current font size
   }
 
   /* MOBILE NAVIGATION */
+
   .btn-mobile-nav {
     display: block;
+    z-index: 1000;
   }
 
   .main-nav {
@@ -308,3 +310,5 @@ wtf is em? em is the root font size and rem is the current font size
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
 */
+
+/* 09 Omnifood Project, 139 lecture is incomplete */
